@@ -1,7 +1,9 @@
+use std::io;
 fn main() {
-    // Statements here are executed when the compiled binary is called.
-
-    // Print text to the console.
     println!("Hello World!");
     println!("I'm a Rustacean!");
+    let mut name = String::new();
+    println!("Enter your name:");
+    io::stdin().read_line(&mut name).expect("Failed to read line");
+    println!("Hello, {}!", name.trim());
 }
